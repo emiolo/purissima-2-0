@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import { ChevronRight, Check, LoaderCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-export function Brand({ light = false }: { light?: boolean }) { return <Link className={`brand ${light ? 'brand-light' : ''}`} to="/"><span className="brand-mark">p</span><span>puríssima</span></Link>; }
+import unicornMark from '../assets/purissima-unicorn.png';
+export function Brand({ light = false }: { light?: boolean }) { return <Link aria-label="Puríssima — início" className={`brand ${light ? 'brand-light' : ''}`} to="/"><img className="brand-mark" src={unicornMark} alt="Unicórnio Puríssima"/><span>puríssima</span></Link>; }
 export function Button({ children, to, variant = 'primary', onClick, type = 'button', disabled = false, className = '' }: { children: ReactNode; to?: string; variant?: 'primary'|'secondary'|'quiet'|'dark'; onClick?: () => void; type?: 'button'|'submit'; disabled?: boolean; className?: string }) { const cls = `button button-${variant} ${className}`; return to ? <Link className={cls} to={to}>{children}<ChevronRight size={16}/></Link> : <button className={cls} type={type} onClick={onClick} disabled={disabled}>{children}</button>; }
 export function SectionTitle({ eyebrow, title, text, action }: { eyebrow?: string; title: string; text?: string; action?: ReactNode }) { return <div className="section-title"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{text && <p className="lead">{text}</p>}</div>{action}</div>; }
 export function StatusBadge({ children, tone = 'sage' }: { children: ReactNode; tone?: 'sage'|'coral'|'sand'|'ink' }) { return <span className={`status status-${tone}`}><i></i>{children}</span>; }
