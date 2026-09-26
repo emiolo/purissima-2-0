@@ -1,0 +1,8 @@
+import { useState } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { people } from './data/mock';
+import { AppLayout } from './components/layout';
+import { HomePage, HowItWorksPage, PlansPage, FAQPage, LoginPage, OnboardingPage } from './pages/PublicPages';
+import { Dashboard, Subscription, FormulasPage, OrdersPage, OrderDetail, PaymentsPage, ProfilePage, SupportPage } from './pages/AppPages';
+function Protected(){const[person,setPerson]=useState(people[0]);const[assistantOpen,setAssistantOpen]=useState(false);return <AppLayout person={person} setPerson={setPerson} assistantOpen={assistantOpen} setAssistantOpen={setAssistantOpen}><Routes><Route index element={<Dashboard person={person}/>}/><Route path="assinatura" element={<Subscription person={person}/>}/><Route path="formulas" element={<FormulasPage/>}/><Route path="pedidos" element={<OrdersPage person={person}/>}/><Route path="pedidos/:id" element={<OrderDetail person={person}/>}/><Route path="pagamentos" element={<PaymentsPage person={person}/>}/><Route path="perfil" element={<ProfilePage/>}/><Route path="suporte" element={<SupportPage/>}/></Routes></AppLayout>}
+export default function App(){return <Routes><Route path="/" element={<HomePage/>}/><Route path="/como-funciona" element={<HowItWorksPage/>}/><Route path="/planos" element={<PlansPage/>}/><Route path="/perguntas-frequentes" element={<FAQPage/>}/><Route path="/login" element={<LoginPage/>}/><Route path="/onboarding" element={<OnboardingPage/>}/><Route path="/app/*" element={<Protected/>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes>}

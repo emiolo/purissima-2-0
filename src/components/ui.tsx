@@ -1,0 +1,11 @@
+import { ReactNode } from 'react';
+import { ChevronRight, Check, LoaderCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+export function Brand({ light = false }: { light?: boolean }) { return <Link className={`brand ${light ? 'brand-light' : ''}`} to="/"><span className="brand-mark">p</span><span>puríssima</span></Link>; }
+export function Button({ children, to, variant = 'primary', onClick, type = 'button', disabled = false, className = '' }: { children: ReactNode; to?: string; variant?: 'primary'|'secondary'|'quiet'|'dark'; onClick?: () => void; type?: 'button'|'submit'; disabled?: boolean; className?: string }) { const cls = `button button-${variant} ${className}`; return to ? <Link className={cls} to={to}>{children}<ChevronRight size={16}/></Link> : <button className={cls} type={type} onClick={onClick} disabled={disabled}>{children}</button>; }
+export function SectionTitle({ eyebrow, title, text, action }: { eyebrow?: string; title: string; text?: string; action?: ReactNode }) { return <div className="section-title"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{text && <p className="lead">{text}</p>}</div>{action}</div>; }
+export function StatusBadge({ children, tone = 'sage' }: { children: ReactNode; tone?: 'sage'|'coral'|'sand'|'ink' }) { return <span className={`status status-${tone}`}><i></i>{children}</span>; }
+export function Card({ children, className = '', onClick }: { children: ReactNode; className?: string; onClick?: () => void }) { return <div className={`card ${className}`} onClick={onClick}>{children}</div>; }
+export function Success({ title, text }: { title: string; text: string }) { return <div className="success"><span><Check size={22}/></span><div><strong>{title}</strong><p>{text}</p></div></div>; }
+export function LoadingState({ label = 'Carregando sua experiência' }: { label?: string }) { return <div className="loading"><LoaderCircle size={25}/><span>{label}</span></div>; }
+export function EmptyState({ title, text }: { title: string; text: string }) { return <div className="empty"><div className="empty-shape"></div><h3>{title}</h3><p>{text}</p></div>; }
