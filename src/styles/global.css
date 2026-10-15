@@ -21,3 +21,7 @@
 .hero-ritual-card{display:none}
 @media(max-width:900px){.product-gallery{grid-template-columns:1fr;gap:32px}.product-gallery__intro{max-width:600px}}
 @media(max-width:600px){.product-gallery{margin-bottom:80px;padding:30px 0}.product-gallery__grid{gap:8px}.product-gallery figure{min-height:190px;padding:10px 7px}.product-gallery figure img{height:143px}.product-gallery__featured{min-height:220px!important}.product-gallery__featured img{height:170px!important}.product-gallery figcaption{font-size:.55rem;padding:0 2px}}
+
+/* Hero com foto oficial de produto: foco no frasco e no espaço negativo original. */
+.immersive-hero{background:#efe9df;color:var(--ink);align-items:center}.hero-photo img{object-position:center}.hero-photo-wash{background:linear-gradient(90deg,rgba(248,246,241,.98) 0%,rgba(248,246,241,.92) 36%,rgba(248,246,241,.24) 66%,rgba(248,246,241,0) 100%)}.hero-copy--immersive h1{color:var(--ink);max-width:560px}.hero-copy--immersive h1 em{color:var(--coral)}.hero-copy--immersive>p{color:var(--muted)}.hero-copy--immersive .button-primary{background:var(--forest);color:#fff;box-shadow:none}.hero-copy--immersive .button-quiet{color:var(--ink)}.hero-copy--immersive small{color:var(--muted)}.light-eyebrow{color:var(--sage2)!important}.hero-scroll-cue{color:var(--muted)}.hero-scroll-cue span{background:var(--sage2)}
+@media(max-width:900px){.hero-photo-wash{background:linear-gradient(0deg,rgba(248,246,241,.98) 0%,rgba(248,246,241,.84) 58%,rgba(248,246,241,.12) 100%)}}
